@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPaneBMI" maxHeight="1080.0" maxWidth="1920.0" minHeight="600.0" minWidth="800.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jakubwasikowski.healthylifestyleapp.BMICalculatorScreenController">
+   <AnchorPane id="stackPaneBMI" maxHeight="1080.0" maxWidth="1920.0" minHeight="600.0" minWidth="800.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: white; -fx-background-radius: 6;">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="45.0" prefHeight="18.0" prefWidth="725.0" style="-fx-background-color: white;" text="BMI CALCULATOR" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="655.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="45.0">
+         <font>
+            <Font name="Lucida Handwriting Italic" size="36.0" />
+         </font>
+      </Label>
+      <GridPane alignment="CENTER" layoutX="369.0" layoutY="280.0" prefHeight="126.0" prefWidth="361.0" AnchorPane.bottomAnchor="440.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="330.0" AnchorPane.topAnchor="200.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.4000244140625" minWidth="10.0" prefWidth="128.4000244140625" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="246.0" style="-fx-background-color: white;" text="WAGA" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
+            <font>
+               <Font name="Lucida Handwriting Italic" size="12.0" />
+            </font>
+            <GridPane.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </GridPane.margin>
+         </Label>
+         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="235.0" style="-fx-background-color: white;" text="PŁEĆ" textAlignment="CENTER" wrapText="true">
+            <font>
+               <Font name="Lucida Handwriting Italic" size="12.0" />
+            </font>
+            <GridPane.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </GridPane.margin>
+         </Label>
+         <RadioButton fx:id="btnFemale" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="22.0" prefWidth="209.0" selected="true" style="-fx-background-color: white;" text="KOBIETA" textAlignment="CENTER" GridPane.columnIndex="1">
+            <font>
+               <Font name="Lucida Handwriting Italic" size="12.0" />
+            </font>
+            <toggleGroup>
+               <ToggleGroup fx:id="tgGender" />
+            </toggleGroup>
+         </RadioButton>
+         <RadioButton fx:id="btnMale" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="22.0" prefWidth="209.0" style="-fx-background-color: white;" text="MĘŻCZYZNA" textAlignment="CENTER" toggleGroup="$tgGender" GridPane.columnIndex="2">
+            <font>
+               <Font name="Lucida Handwriting Italic" size="12.0" />
+            </font>
+         </RadioButton>
+         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="246.0" style="-fx-background-color: white;" text="WZROST" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
+            <font>
+               <Font name="Lucida Handwriting Italic" size="12.0" />
+            </font>
+         </Label>
+         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="246.0" style="-fx-background-color: white;" text="kg" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <font>
+               <Font name="Lucida Handwriting Italic" size="12.0" />
+            </font>
+         </Label>
+         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="246.0" style="-fx-background-color: white;" text="cm" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <font>
+               <Font name="Lucida Handwriting Italic" size="12.0" />
+            </font>
+         </Label>
+         <TextField fx:id="lblWeight" alignment="CENTER" text="60" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <TextField fx:id="lblHeight" alignment="CENTER" text="180" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#onMouseClicked_btnCalculate" prefHeight="26.0" prefWidth="124.0" style="-fx-background-color: #222831;" text="OBLICZ" textFill="#eeeeee" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <font>
+               <Font name="Lucida Handwriting Italic" size="12.0" />
+            </font>
+         </Button>
+      </GridPane>
+      <ButtonBar fx:id="btnbBack" layoutX="882.0" layoutY="636.0" onMouseClicked="#onMouseClicked_btnbBack" onMouseEntered="#onMouseEntered_btnbBack" onMouseExited="#onMouseExited_btnbBack" />
+      <Label fx:id="lblResult" alignment="CENTER" contentDisplay="CENTER" layoutX="381.0" layoutY="328.0" prefHeight="18.0" prefWidth="261.0" style="-fx-background-color: #222831;" text="TWÓJ WSKAŹNIK BMI" textAlignment="CENTER" textFill="#eeeeee" AnchorPane.bottomAnchor="420.0" AnchorPane.leftAnchor="380.0" AnchorPane.rightAnchor="380.0" AnchorPane.topAnchor="328.0">
+         <font>
+            <Font name="Lucida Handwriting Italic" size="12.0" />
+         </font>
+      </Label>
+      <Pane layoutX="850.0" layoutY="594.0" onMouseClicked="#onMouseClicked_btnbBack">
+         <ImageView>
+            <Image url="@img/back.png" />
+         </ImageView>
+      </Pane>
+      <TextArea editable="false" layoutX="23.0" layoutY="429.0" prefHeight="183.0" prefWidth="238.0" text="mniej niż 16 -wygłodzenie&#10;16 - 16.99 - wychudzenie &#10;17 - 18.49 - niedowaga&#10;18.5 - 24.99 -wartość prawidłowa&#10;25 - 29.99 - nadwaga&#10;30 - 34.99 - I stopień otyłości&#10;35 - 39.99 - II stopień otyłości&#10;powyżej 40 - otyłość skrajna" wrapText="true">
+         <font>
+            <Font name="Lucida Handwriting Italic" size="12.0" />
+         </font>
+      </TextArea>
+      <BarChart layoutX="262.0" layoutY="354.0">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis animated="false" autoRanging="false" side="LEFT" upperBound="45.0" />
+         </yAxis>
+      </BarChart>
+   </AnchorPane>
+</StackPane>
